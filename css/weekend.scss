@@ -1,0 +1,407 @@
+@import "mixins.scss";
+
+body{
+    .main-news{
+        position: relative;
+        .article{
+            &.article-type0{
+                height: calc(100vh - 70px);
+                &:hover{
+                    .article__title{
+                        text-decoration: none;
+                    }
+                }
+                .article__title:hover{
+                    text-decoration: underline;
+                }
+                .article__cover{
+                    min-height: 400px;
+                }
+                .article__info{
+                    background: linear-gradient(to bottom right, transparent, rgba(0,0,0,0.8));
+
+                    .main-news-list{
+                        list-style: none;
+                        padding-left: 0;
+                        margin: 0;
+                        & > li{
+                            max-width: 350px;
+                            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+                            &:last-child{
+                                border-bottom: none;
+                            }
+                            .article{
+                                .article__info{
+                                    padding: 10px 0;
+                                    position: relative;
+                                    background: transparent;
+                                    .article__title{
+                                        color: #fff;
+                                        margin-top: 0;
+                                        font-family: FuturaBookC;
+                                        margin-bottom: 10px;
+                                        font-size: 24px;
+                                        line-height: 28px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .weekend-news{
+        padding: 40px;
+        .article{
+            margin-bottom: 40px;
+        }
+    }
+
+    .top{
+
+        .news-gallery{
+            .article{
+                &.article-type0{
+                    .article__cover{
+                        min-height: 600px;
+                    }
+                }
+            }
+        }
+
+        .top__title{
+            font-family: FuturaPT-Bold;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            li{
+                .article{
+                    .article__info{
+                        padding: 0 0 20px 0;
+                        .article__title{
+                            font-family: FuturaMediumC;
+                            font-size: 20px;
+                            margin:  0 0 10px;
+                        }
+                    }
+                }
+
+                &:last-child{
+                    a{
+                        color: $color-weekend;
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+
+    .hot-tour{
+        padding: 40px;
+
+        .hot-tour__title{
+            font-size: 28px;
+            color: #484848;
+            font-family: FuturaDemiC;
+            margin: 0 0 20px;
+        }
+        .banner{
+            margin-top: 0;
+            position: relative;
+            .banner__info{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                padding: 20px;
+                @include flex();
+                justify-content: space-between;
+                text-decoration: none;
+                flex-direction: column;
+
+                & > span{
+                    &:first-child{
+                        font-size: 12px;
+                        text-transform: uppercase;
+                        color: #fff;
+                        opacity: .6;
+                    }
+                    &:last-child{
+                        font-size: 12px;
+                        color: #000;
+                        opacity: .4;
+                    }
+                }
+
+                .banner__desc{
+                    font-size: 18px;
+                    font-family: FuturaPT-Bold;
+                    color: #fff;
+                    span{
+                        font-family: FuturaMediumC;
+                        font-size: 14px;
+                        text-transform: uppercase;
+                        margin-top: 10px;
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+
+        .tour{
+            text-decoration: none;
+            margin-bottom: 20px;
+            display: block;
+            img{
+                width: 100%;
+            }
+
+            .tour__price{
+                color: $color-weekend;
+                font-family: FuturaDemiC;
+                font-size: 15px;
+            }
+
+            .tour__title{
+                font-size: 24px;
+                margin: 15px 0 0 0;
+            }
+
+            .tour__desc{
+                font-size: 15px;
+                color: #484848;
+                margin: 10px 0;
+            }
+
+            .tour__rating{
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                @include flex();
+                align-items: center;
+                li{
+                    color: #00a799;
+                    font-size: 12px;
+                    &:last-child{
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+    .tickets{
+        padding: 40px 0 40px 40px;
+        .tickets__title{
+            color: $color-weekend;
+            font-size: 24px;
+            font-family: FuturaPT-Bold;
+            margin:  0 0 20px;
+        }
+    }
+
+    .bottom-menu{
+        background-color: $color-weekend;
+    }
+
+    @media (max-width: 1199.98px) {
+        .main-news{
+            .article{
+                &.article-type0{
+                    .article__cover{
+
+                    }
+                    .article__info{
+                        .main-news-list{
+
+                            & > li{
+                                .article{
+                                    .article__info{
+                                        .article__title{
+                                            font-size: 16px;
+                                            line-height: 22px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .hot-tour{
+            .banner{
+                .banner__info{
+                    .banner__desc{
+                        font-size: 15px;
+                        font-family: FuturaBookC;
+                        span{
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 991.98px) {
+        .top{
+            .news-gallery{
+                .article{
+                    &.article-type0{
+                        .article__cover{
+                            min-height: 400px;
+                        }
+                    }
+                }
+            }
+
+            .top__title{
+                margin-top: 40px;
+            }
+
+            .top__list{
+                margin-bottom: 40px;
+                li{
+                    .article{
+                        .article__info{
+                            .article__title{
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .hot-tour{
+            .banner{
+                .banner__info{
+                    padding: 10px;
+                    .banner__desc{
+                        font-size: 14px;
+                        font-family: FuturaBookC;
+                        margin: 0;
+                        span{
+                            font-size: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .tickets{
+            padding: 20px;
+            .article{
+                &.article-type1{
+                    .article__info{
+                        .article__title{
+                            font-size: 16px;
+                            line-height: 18px;
+                        }
+                    }
+                }
+                &.article-type0{
+                    .article__info{
+                        padding: 10px;
+                        .article__title{
+                            font-size: 16px;
+                            line-height: 18px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 767.98px) {
+        .main-news{
+            .article{
+                &.article-type0{
+                    & > .article__info{
+                        padding: 20px;
+                    }
+                }
+            }
+        }
+
+        .weekend-news{
+            padding: 20px;
+        }
+
+        .hot-tour{
+            padding: 20px;
+            .banner{
+                .banner__info{
+                    padding: 20px;
+                    .banner__desc{
+                        font-size: 18px;
+                        font-family: FuturaPT-Bold;
+                        margin: 0;
+                        span{
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .tickets{
+            padding: 0px;
+            .pr0{
+                padding-right: 15px;
+                margin-top: 20px;
+            }
+
+            .article{
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    @media (max-width: 575.98px) {
+        .main-news{
+            .article{
+                &.article-type0{
+                    .article__cover{
+                        min-height: 500px;
+                    }
+                }
+            }
+        }
+
+        .pl0{
+            padding-left: 15px;
+        }
+
+        .top{
+            .news-gallery{
+                .article{
+                    &.article-type0{
+                        .article__cover{
+                            min-height: 400px;
+                        }
+                    }
+                }
+            }
+
+            .top__title{
+                margin-top: 40px;
+            }
+
+            .top__list{
+                margin-bottom: 40px;
+            }
+        }
+    }
+}
+

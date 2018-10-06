@@ -1,0 +1,30 @@
+@mixin flex(){
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+@mixin inline-flex(){
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+@mixin ul(){
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+$color-sapphire: #1d32a8;
+$color-pine-green: #06161c;
+$color-finance: #ffab00;
+$color-politics: #6554c0;
+$color-tech: #36b37e;
+$color-game: #1d1b20;
+$color-health: #3abe9f;
+$color-sport: #ff5230;
+$color-weekend: #6554c0;
+$color-horo: #302949;

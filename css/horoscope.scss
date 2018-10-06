@@ -1,0 +1,191 @@
+@import "mixins";
+body{
+    .horoscope{
+        .horoscope__menu{
+            margin: 0;
+            list-style: none;
+            @include flex();
+            width: 100%;
+            background-color: $color-horo;
+            padding: 0 180px;
+            li{
+                a{
+                    @include flex();
+                    flex-direction: column;
+                    padding: 10px 20px;
+                    text-decoration: none;
+                    align-items: center;
+                    max-width: 64px;
+                    border: 1px solid rgba(255, 255, 255, 0.4);
+                    border-right: none;
+                    svg{
+                        max-width: 26px;
+                        path, g{
+                            stroke: white;
+                        }
+                    }
+                    span{
+                        margin-top: 5px;
+                        font-size: 12px;
+                        color: #fff;
+                    }
+                }
+
+                &:last-child{
+                    a{
+                        border: 1px solid rgba(255, 255, 255, 0.4);
+                    }
+                }
+
+                &.active{
+                    a{
+                        background-color: #fff;
+                        svg{
+                            path, g{
+                                stroke: $color-horo;
+                            }
+                        }
+                        span{
+                            color: $color-horo;
+                        }
+                    }
+                }
+            }
+        }
+
+        .horoscope__type{
+            margin: 0;
+            list-style: none;
+            @include flex();
+            width: 100%;
+            background-color: #f8f6fc;
+            padding: 0 180px;
+            li{
+                margin-right: 15px;
+                a{
+                    text-decoration: none;
+                    font-size: 14px;
+                    color: #000;
+                    opacity: .6;
+                    display: inline-block;
+                    padding: 10px 0;
+                }
+                &.active{
+                    a{
+                        opacity: 1;
+                    }
+                }
+            }
+
+            &.horoscope__time{
+                background-color: #fff;
+                li{
+                    a{
+                        padding: 15px 0;
+                    }
+                }
+            }
+        }
+
+        .horoscope__details{
+            padding: 40px 180px;
+            .horoscope__details-item{
+                -webkit-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.12);
+                -moz-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.12);
+                box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.12);
+                padding: 26px;
+
+                .horoscope__details-item__cover{
+                    width: 100%;
+                    height: auto;
+                }
+
+                .horoscope__details-item__date{
+                    color: rgba(33, 43, 54, 0.5);
+                    font-size: 12px;
+                }
+
+                .horoscope__details-item__title{
+                    font-family: FuturaDemiC;
+                    font-size: 24px;
+                    margin: 0;
+                }
+
+                .horoscope__details-item__desc{
+                    font-family: FuturaMediumC;
+                    font-size: 16px;
+                    margin: 5px 0;
+                }
+
+                .horoscope__details-item__text{
+                    opacity: .8;
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    .recomendation{
+        padding: 40px;
+        .recomendation__title{
+            font-size: 24px;
+            font-family: FuturaPT-Bold;
+        }
+        .article{
+            margin-bottom: 20px;
+
+            &.first-stat{
+                .article__stats{
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+
+    .bottom-menu{
+        background-color: $color-horo;
+    }
+
+    @media (max-width: 1199.98px) {
+        .horoscope{
+            .horoscope__menu{
+                padding: 0 100px;
+                li{
+                    a{
+                        border: 1px solid rgba(255, 255, 255, 0.4);
+                    }
+                }
+            }
+            .horoscope__type{
+                padding: 0 100px;
+            }
+
+            .horoscope__details{
+                padding: 40px 100px;
+                .horoscope__details-item{
+
+                }
+            }
+        }
+    }
+    @media (max-width: 991.98px) {
+        .horoscope{
+            .horoscope__menu, .horoscope__type, .horoscope__time{
+                justify-content: center;
+                padding: 0px;
+            }
+        }
+    }
+
+    @media (max-width: 767.98px) {
+        .horoscope{
+            .horoscope__details{
+                padding: 20px;
+            }
+        }
+
+        .recomendation{
+            padding: 20px;
+        }
+    }
+}

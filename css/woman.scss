@@ -1,0 +1,140 @@
+@import "mixins.scss";
+
+body{
+    .woman-main{
+        padding: 40px;
+        .article{
+            &.article-big{
+                .article__info{
+                    .article__stats{
+                        margin-top: 20px;
+                    }
+                }
+            }
+
+            &.article-type5{
+                margin-bottom: 40px;
+            }
+        }
+    }
+
+    .woman-news{
+        padding: 0px 40px;
+        & + .woman-news{
+            padding-top: 0;
+        }
+        .article{
+            margin-bottom: 30px;
+        }
+
+        &.woman-news2{
+            .article{
+                .article__info{
+                    .article__stats{
+                        &.article__stats-type2{
+                            margin-top: 15px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .load_more{
+            margin-bottom: 30px;
+            a{
+                background-color: #b86df0;
+            }
+        }
+    }
+
+    .health{
+        padding: 40px;
+        .weekend__title{
+            color: $color-health;
+        }
+        .article{
+            margin-bottom: 20px;
+            .article__info{
+                padding: 0;
+            }
+        }
+    }
+
+    .bottom-menu{
+        background-color: $color-health;
+    }
+
+
+    @media (max-width: 1199.98px) {
+        .woman-news{
+            .article{
+                margin-bottom: 30px;
+                &.article-type0{
+                    &.article-small{
+                        .article__info{
+                            .article__title{
+                                font-size: 14px;
+                                margin: 0;
+                                line-height: 16px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 991.98px) {
+
+    }
+
+    @media (max-width: 767.98px) {
+        .woman-main{
+            padding: 20px;
+            .article{
+                &.article-big{
+                    margin-bottom: 20px;
+                }
+            }
+        }
+        .woman-news{
+            padding: 0px 20px;
+            .article{
+                margin-bottom: 20px;
+
+                &.article-type0{
+                    &.article-small{
+                        .article__info{
+                            .article__title{
+                                font-size: 16px;
+                                line-height: 18px;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    @media (max-width: 575.98px) {
+        .health{
+            padding: 0;
+        }
+        .woman-news{
+            .article{
+                &.article-type0{
+                    .article__cover{
+                        min-height: 250px;
+                    }
+                    .article__info{
+                        .article__title{
+                            font-size: 18px;
+                            line-height: 22px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

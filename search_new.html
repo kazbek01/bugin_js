@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bugin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/owl/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/sport.css">
+    <link rel="stylesheet" href="css/daterangepicker.css">
+    <link rel="stylesheet" href="css/element.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/search.css">
+</head>
+<body id="search-box">
+<header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-sm-7 col-md-8 col-lg-9 pl0 pr0">
+                <div class="top-menu">
+                    <div class="burger">
+                        <img src="images/icons/menu.svg" alt="">
+                    </div>
+                    <ul class="menu">
+                        <li><a href="/"><img src="images/icons/logo_light.svg" alt="bugin"></a></li>
+                        <li><a href="">Новости</a></li>
+                        <li><a href="">Политика</a></li>
+                        <li><a href="">Финансы</a></li>
+                        <li><a href="">Технология</a></li>
+                        <li><a href="">Спорт</a></li>
+                        <li><a href="">Weekend</a></li>
+                        <li><a href="">Реферат</a></li>
+                    </ul>
+                    <div class="search">
+                        <img src="images/icons/search.svg" alt="">
+                        <a class="lang" href="">Ру</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-5 col-md-4 col-lg-3 pl0 pr0">
+                <ul class="control-center">
+                    <li>
+                        <a href="">
+                            <img src="images/icons/book.svg" alt="">
+                            Создать
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="images/icons/auth.svg" alt="">
+                            Войти
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="images/icons/mail.svg" alt="">
+                            Почта
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<section id="search" class="search">
+    <div class="container">
+        <div class="big-search">
+            <img
+                 src="images/icons/big-search.svg" alt="">
+            <input name="search-field2"
+                   placeholder="Что вы ищете ?"
+                   type="text">
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-8">
+                <ul class="rubrics">
+                    <li class="rubric active">Все</li>
+                    <li class="rubric">Политика</li>
+                    <li class="rubric">Финансы</li>
+                    <li class="rubric">IT</li>
+                    <li class="rubric">Woman</li>
+                    <li class="rubric">Weekend</li>
+                    <li class="rubric">Health</li>
+                    <li class="rubric">Travel</li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-4">
+                <div class="extended">
+                    <a id="btn-search">
+                        Расширенный поиск
+                        <img src="images/icons/up.svg" id="arr-up">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="search-result">
+            <div class="col-12 col-md-6">
+                <div class="where">
+                    <select  class="el-input__inner" data-value="Где искат">
+                        <option value="">1</option>
+                        <option value="">2</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div>
+                <div class="date">
+                    <p>Дата публикации</p>
+                    <input type="text" name="datefilter" value="" class="el-input__inner" />
+                </div>
+                    <label class="check-box">за все время
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="result">
+            <div class="result__caption">
+                <p>найдено 1435 материалов</p>
+                <div class="sort-drop">
+                    <a class="dropdown-toggle sort-link" data-toggle="dropdown">Сортировка по <img src="images/icons/up.svg"></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="">дате публикации</a></li>
+                        <li><a href="">просмотрам</a></li>
+                        <li><a href="">числу комментариев</a></li>
+                        <li><a href="">по лайкам</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="result__body">
+                <div class="article">
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+                            <a href="">
+                                <img src="images/news/myarticle.jpg" class="article__cover">
+                            </a>
+                        </div>
+                        <div class="col-12 col-md-8">
+                            <div class="article__stats">
+                                <ul class="">
+                                    <li class="article__date">
+                                        Сегодня в 12:45
+                                        <img class="article_comments" src="images/icons/time.svg" alt="">
+                                    </li>
+                                    <li>
+                                        555
+                                        <img class="article_comments" src="images/icons/comment_fill.svg" alt="">
+                                    </li>
+                                    <li>
+                                        666
+                                        <img class="article_views" src="images/icons/views-white.svg" alt="">
+                                    </li>
+                                </ul>
+                            </div>
+                            <h3 class="article__title">
+                                <a href="">«СПК необходимо усилить контроль над возвратностью заемных средств»</a>
+                            </h3>
+                            <p class="article__desc mt0">
+                                <a href="">
+                                    Аким Атырауской области Нурлан Ногаев в ходе собрания совета директоров
+                                    социально-предпринимательской корпорации «Атырау» поручил усилить контроль над
+                                    инвестиционными проектами, реализуемыми в регионе.
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article">
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+                            <a href="">
+                                <img src="images/news/myarticle.jpg" class="article__cover">
+                            </a>
+                        </div>
+                        <div class="col-12 col-md-8">
+                            <div class="article__stats">
+                                <ul class="">
+                                    <li class="article__date">
+                                        Сегодня в 12:45
+                                        <img class="article_comments" src="images/icons/time.svg" alt="">
+                                    </li>
+                                    <li>
+                                        555
+                                        <img class="article_comments" src="images/icons/comment_fill.svg" alt="">
+                                    </li>
+                                    <li>
+                                        666
+                                        <img class="article_views" src="images/icons/views-white.svg" alt="">
+                                    </li>
+                                </ul>
+                            </div>
+                            <h3 class="article__title">
+                                <a href="">«СПК необходимо усилить контроль над возвратностью заемных средств»</a>
+                            </h3>
+                            <p class="article__desc mt0">
+                                <a href="">
+                                    Аким Атырауской области Нурлан Ногаев в ходе собрания совета директоров
+                                    социально-предпринимательской корпорации «Атырау» поручил усилить контроль над
+                                    инвестиционными проектами, реализуемыми в регионе.
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="article">
+                    <div class="row">
+                        <div class="col-12 col-md-4">
+                            <a href="">
+                                <img src="images/news/myarticle.jpg" class="article__cover">
+                            </a>
+                        </div>
+                        <div class="col-12 col-md-8">
+                            <div class="article__stats">
+                                <ul class="">
+                                    <li class="article__date">
+                                        Сегодня в 12:45
+                                        <img class="article_comments" src="images/icons/time.svg" alt="">
+                                    </li>
+                                    <li>
+                                        555
+                                        <img class="article_comments" src="images/icons/comment_fill.svg" alt="">
+                                    </li>
+                                    <li>
+                                        666
+                                        <img class="article_views" src="images/icons/views-white.svg" alt="">
+                                    </li>
+                                </ul>
+                            </div>
+                            <h3 class="article__title">
+                                <a href="">«СПК необходимо усилить контроль над возвратностью заемных средств»</a>
+                            </h3>
+                            <p class="article__desc mt0">
+                                <a href="">
+                                    Аким Атырауской области Нурлан Ногаев в ходе собрания совета директоров
+                                    социально-предпринимательской корпорации «Атырау» поручил усилить контроль над
+                                    инвестиционными проектами, реализуемыми в регионе.
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="dispatch">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <p class="dispatch__title">Еженедельная рассылка</p>
+                <p class="dispatch__desc">
+                    Подпишись на любимые темы и получай самое важные новости каждую неделю.
+                    <br> Обещаем не спамить 😉
+                </p>
+                <div class="dispatch__form">
+                    <div class="custom-select">
+                        <select name="category" id="">
+                            <option value="0">Выберите тему новостей</option>
+                            <option value="1">2</option>
+                            <option value="2">3</option>
+                            <option value="3">4</option>
+                            <option value="4">5</option>
+                        </select>
+                    </div>
+                    <input name="email"
+                           type="email"
+                           placeholder="Ваша электронная почта">
+                </div>
+                <div class="follow">Подписаться</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="bottom-menu">
+    <ul>
+        <li><a href="">Новости</a></li>
+        <li><a href="">Политика</a></li>
+        <li><a href="">Финансы</a></li>
+        <li><a href="">Технология</a></li>
+        <li><a href="">Спорт</a></li>
+        <li><a href="">Weekend</a></li>
+        <li><a href="">Реферат</a></li>
+        <li><a href="">Картинки</a></li>
+        <li><a href="">Билеты</a></li>
+        <li><a href="">Почта</a></li>
+        <li><a href="">Туры</a></li>
+        <li><a href="">Погода</a></li>
+    </ul>
+</section>
+
+<section class="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4">
+                <div class="logo">
+                    <a href="/"><img src="images/logo.png" alt=""></a>
+                    <span>
+                            Разработка и дизайн <br>
+                            bg.pro, 2018
+                        </span>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="social-networks">
+                    <a href=""><img src="images/icons/social/instagram.svg" alt=""></a>
+                    <a href=""><img src="images/icons/social/facebook.svg" alt=""></a>
+                    <a href=""><img src="images/icons/social/telegram.svg" alt=""></a>
+                </div>
+            </div>
+            <div class="col-4">
+                <p class="copy">
+                    © 2012-2018 «bugin.kz» <br>
+                    Любое использование материалов допускается только при <br>
+                    наличии гиперссылки на bugin.kz
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="fixed-menu">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-sm-7 col-md-8 col-lg-9 pl0">
+                    <div class="header">
+                        <div class="close">
+                            <img src="images/icons/close.svg" alt="">
+                        </div>
+                        <div class="logo">
+                            <a href="/"><img src="images/icons/logo_dark.svg" alt=""></a>
+                            <span>сервисный медиа портал</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-5 col-md-4 col-lg-3 pl0 pr0">
+                    <ul class="control-center">
+                        <li>
+                            <a href="">
+                                <img src="images/icons/book.svg" alt="">
+                                Создать
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="images/icons/auth.svg" alt="">
+                                Войти
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="images/icons/mail.svg" alt="">
+                                Почта
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-12">
+                    <div class="big-search">
+                        <img src="images/icons/big-search.svg" alt="">
+                        <input name="search-field" placeholder="Что вы ищете ?" type="text">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="category">
+                                <p class="category__title">
+                                    Категории
+                                </p>
+                                <ul>
+                                    <li><a href="">Новости</a></li>
+                                    <li><a href="">Политика</a></li>
+                                    <li><a href="">Финансы</a></li>
+                                    <li><a href="">Технологий</a></li>
+                                    <li><a href="">Спорт</a></li>
+                                    <li><a href="">Weekend</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="category">
+                                <ul class="without__title">
+                                    <li><a href="">Блогеры</a></li>
+                                    <li><a href="">Горящие туры</a></li>
+                                    <li><a href="">Билеты</a></li>
+                                    <li><a href="">Для женщин</a></li>
+                                    <li><a href="">ТОП рейтинг</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-4">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="category">
+                                <p class="category__title">
+                                    Сервисы
+                                </p>
+                                <ul>
+                                    <li><a href="">Мой кабинет</a></li>
+                                    <li><a href="">Почта</a></li>
+                                    <li><a href="">Реферат</a></li>
+                                    <li><a href="">Погода</a></li>
+                                    <li><a href="">Курсы</a></li>
+                                    <li><a href="">Гороскоп</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="category">
+                                <ul class="without__title">
+                                    <li><a href="">Помощь</a></li>
+                                    <li><a href="">bugin.pay</a></li>
+                                    <li><a href="">bugin.disqus</a></li>
+                                    <li><a href="">Рассылка</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <div class="category">
+                        <p class="category__title">
+                            Информация
+                        </p>
+                        <ul>
+                            <li><a href="">О нас</a></li>
+                            <li><a href="">О проекте</a></li>
+                            <li><a href="">Для блогеров</a></li>
+                            <li><a href="">Система рейтингов</a></li>
+                            <li><a href="">Связаться с нами</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="dispatch">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <p class="dispatch__title">Еженедельная рассылка</p>
+                        <p class="dispatch__desc">
+                            Подпишись на любимые темы и получай самое важные новости каждую неделю. <br> Обещаем не спамить 😉
+                        </p>
+
+                        <div class="dispatch__form">
+                            <div class="custom-select">
+                                <select name="">
+                                    <option value="">Выберите тему новостей</option>
+                                    <option value="">2</option>
+                                </select>
+                            </div>
+                            <input type="text" placeholder="Ваша электронная почта">
+                        </div>
+
+                        <div class="follow">Подписаться</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="logo">
+                            <a href="/"><img src="images/logo-white.png" alt=""></a>
+                            <span>
+                                Разработка и дизайн <br>
+                                bg.pro, 2018
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="social-networks">
+                            <a href=""><img src="images/icons/social/instagram-white.svg" alt=""></a>
+                            <a href=""><img src="images/icons/social/facebook-white.svg" alt=""></a>
+                            <a href=""><img src="images/icons/social/telegram-white.svg" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <p class="copy">
+                            © 2012-2018 «bugin.kz» <br>
+                            Любое использование материалов допускается только при <br>
+                            наличии гиперссылки на bugin.kz
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+<script src="js/jquery.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/daterangepicker.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/search.js"></script>
+<script src="js/scripts.js"></script>
+<!--<script src="js/vue.min.js"></script>-->
+<!--<script src="js/element.js"></script>-->
+<!--<script src="js/element-locale.js"></script>-->
+<script type="text/javascript">
+    $(function() {
+
+        $('input[name="datefilter"]').daterangepicker({
+            autoUpdateInput: false,
+            locale: {
+                cancelLabel: 'Clear'
+            }
+        });
+
+        $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
+            $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+        });
+
+        $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
+            $(this).val('');
+        });
+
+    });
+</script>
+</body>
+</html>

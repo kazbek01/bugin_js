@@ -1,0 +1,198 @@
+@import "mixins.scss";
+
+body{
+    .politics-main{
+        padding: 40px;
+        .article{
+            height: 100%;
+            .article__info{
+                .article__title{
+                    font-size: 32px;
+                    line-height: 40px;
+                }
+                .article__desc{
+                    font-family: FuturaBookC;
+                    font-size: 16px;
+                    color: #fff;
+                    opacity: 1;
+                }
+            }
+        }
+
+        .banner{
+            margin-top: 0;
+        }
+    }
+
+    .politics-news{
+        padding: 40px;
+
+        .articles-left{
+            .article{
+                position: relative;
+                margin-bottom: 20px;
+                &:first-child{
+                    .article__info{
+                        .article__title{
+                            margin-top: 0;
+                        }
+                    }
+                }
+                &:last-child{
+                    margin-bottom: 0;
+                }
+                .article__info{
+                    .article__title{
+                        font-size: 16px;
+                        line-height: 20px;
+                        &:hover{
+                            color: $color-politics;
+                        }
+                    }
+                }
+
+                .article__number{
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    font-size: 60px;
+                    color: $color-politics;
+                    opacity: .15;
+                    font-family: FuturaPT-Bold;
+                }
+            }
+        }
+
+        .articles-center{
+            .article{
+                margin-bottom: 40px;
+                 &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .articles-right{
+            .article{
+                margin-bottom: 40px;
+
+                .article__info{
+                    .article__title{
+                        &:hover{
+                            color: $color-politics;
+                        }
+                    }
+                }
+            }
+        }
+
+        .load_more{
+            margin-top: 40px;
+            a{
+                background-color: $color-politics;
+            }
+        }
+    }
+
+    .bottom-menu{
+        background-color: $color-politics;
+    }
+
+
+
+
+    @media (max-width: 1199.98px) {
+
+    }
+
+    @media (max-width: 991.98px) {
+        .politics-main{
+            .article{
+                .article__info{
+                    padding: 20px;
+                    .article__title{
+                        font-size: 24px;
+                        line-height: 28px;
+                    }
+                }
+            }
+        }
+
+        .politics-news{
+            .articles-center{
+                .article{
+                    .article__info{
+                        padding: 20px;
+
+                        .article__title{
+                            font-size: 20px;
+                            line-height: 24px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 767.98px) {
+        .politics-main{
+            .article{
+                .article__info{
+                    padding: 20px;
+                    .article__title{
+                        font-size: 22px;
+                        line-height: 24px;
+                    }
+
+                    .article__desc{
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .politics-news{
+            .articles-left{
+                margin-bottom: 20px;
+            }
+            .articles-center{
+                .article{
+                    .article__info{
+                        .article__title{
+                            font-size: 18px;
+                            line-height: 20px;
+                            margin-top: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 575.98px) {
+        .politics-main{
+            padding: 20px;
+            .article{
+                .article__cover{
+                    min-height: 300px;
+                    object-fit: cover;
+                }
+            }
+
+            .banner{
+                margin-top: 20px;
+            }
+        }
+
+        .politics-news{
+            padding: 20px;
+
+            .articles-center{
+                margin-bottom: 20px;
+                .article{
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}

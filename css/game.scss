@@ -1,0 +1,174 @@
+@import "mixins.scss";
+
+body{
+
+    .technology-main{
+        height: calc(100vh - 70px);
+        .article{
+            height: 100%;
+            .article__cover{
+                object-fit: cover;
+            }
+            .article__info{
+                @include flex();
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                .article__section{
+                    color: $color-tech;
+                }
+                .article__title{
+                    font-size: 44px;
+                    line-height: 60px;
+                    max-width: 750px;
+                    margin-top: 0;
+                    margin-bottom: 50px;
+                }
+
+                .article__author{
+                    @include flex();
+                    flex-direction: column;
+                    align-items: center;
+                    color: #fff;
+                    opacity: .8;
+                    img{
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    .game-news{
+        .article{
+            height: 100%;
+            .article__cover{
+                object-fit: cover;
+                height: 100%;
+            }
+        }
+    }
+
+    .video-gallery{
+        .video-gallery__header {
+            h3{
+                span{
+                    color: #3c23cd;
+                }
+            }
+        }
+    }
+
+
+    .dispatch{
+		background-color: $color-game;
+        color: #fff;
+		.dispatch__title{
+			color: #fff;
+		}
+
+
+		.dispatch__form{
+
+			.custom-select {
+				border-bottom: 1px solid #fff;
+
+				&:after {
+					position: absolute;
+					right: 0;
+					top: 5px;
+					width: 50px;
+					height: 100%;
+					line-height: 38px;
+					content: url("../images/icons/down.svg");
+					text-align: center;
+					color: #fff;
+					font-size: 24px;
+					z-index: -1;
+				}
+
+				select {
+					color: #fff;
+				}
+			}
+
+			input{
+				border-bottom: 1px solid #fff;
+				color: #fff;
+				&::placeholder{
+					color: #fff;
+				}
+			}
+		}
+
+		.follow{
+			border: 1px solid #fff;
+			color: #fff;
+			&:hover{
+				background-color: #fff;
+				color: $color-game;
+			}
+		}
+	}
+
+    .bottom-menu{
+        background-color: #3c23cd;
+    }
+
+    .footer{
+        background-color: $color-game;
+    }
+
+
+
+    @media (max-width: 1199.98px) {
+
+    }
+
+    @media (max-width: 991.98px) {
+        .technology-main{
+            .article{
+                .article__info{
+                    padding: 20px;
+                    .article__title{
+                        font-size: 35px;
+                        line-height: 40px;
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 767.98px) {
+        .technology-main{
+            .article{
+                .article__info{
+                    .article__title{
+                        font-size: 24px;
+                        line-height: 28px;
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 575.98px) {
+        .technology-main{
+            .article{
+                .article__info{
+                    .article__title{
+                        font-size: 16px;
+                        line-height: 18px;
+                    }
+                    .article__author{
+                        display: none;
+                    }
+                }
+            }
+        }
+
+    }
+}

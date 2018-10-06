@@ -1,0 +1,171 @@
+@import "mixins.scss";
+
+body{
+
+    .technology-main{
+        height: calc(100vh - 70px);
+        .article{
+            height: 100%;
+            .article__cover{
+                object-fit: cover;
+            }
+            .article__info{
+                @include flex();
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                .article__section{
+                    color: $color-tech;
+                }
+                .article__title{
+                    font-size: 44px;
+                    line-height: 60px;
+                    max-width: 750px;
+                    margin-top: 0;
+                    margin-bottom: 50px;
+                }
+
+                .article__author{
+                    @include flex();
+                    flex-direction: column;
+                    align-items: center;
+                    color: #fff;
+                    opacity: .8;
+                    img{
+                        margin-bottom: 10px;
+                        -webkit-border-radius: 50%;
+                        -moz-border-radius: 50%;
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+    }
+
+    .techno-news{
+        padding: 40px 160px;
+        .articles-left{
+            margin-bottom: 40px;
+            .banner{
+                margin-top: 0;
+            }
+        }
+
+        .article{
+            &.article-type1{
+                .article__info{
+                    .article__title{
+                        &:hover{
+                            color: $color-tech;
+                        }
+                    }
+                }
+            }
+        }
+
+        .load_more{
+            margin-top: 40px;
+            a{
+                background-color: $color-tech;
+            }
+        }
+    }
+
+    .bottom-menu{
+        background-color: $color-tech;
+    }
+
+
+
+    @media (max-width: 1199.98px) {
+
+    }
+
+    @media (max-width: 991.98px) {
+        .technology-main{
+            .article{
+                .article__info{
+                    padding: 20px;
+                    .article__title{
+                        font-size: 35px;
+                        line-height: 40px;
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+        }
+
+        .techno-news{
+            padding: 40px;
+            .article{
+                &.article-type0{
+                    .article__info{
+                        padding: 20px;
+                        .article__title{
+                            margin-top: 0;
+                            font-size: 20px;
+                            line-height: 24px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 767.98px) {
+        .technology-main{
+            .article{
+                .article__info{
+                    .article__title{
+                        font-size: 24px;
+                        line-height: 28px;
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+
+        .techno-news{
+            padding: 20px;
+            .article{
+                &.article-type0{
+                    .article__info{
+                        padding: 10px;
+                        .article__title{
+                            margin-top: 0;
+                            font-size: 16px;
+                            line-height: 18px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 575.98px) {
+        .technology-main{
+            .article{
+                .article__cover{
+                    min-height: 300px;
+                }
+                .article__info{
+                    .article__title{
+                        font-size: 16px;
+                        line-height: 18px;
+                    }
+                    .article__author{
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .techno-news{
+            padding: 20px;
+            .article{
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
