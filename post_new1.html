@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bugin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="css/owl/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/post.css">
+    <link rel="stylesheet" href="css/element.min.css">
+    <link rel="stylesheet" href="css/bootstrap-tagsinput.css">
+    <link rel="stylesheet" href="css/search.css">
+</head>
+<body>
+
+<section v-loading="loading" id="post" class="post">
+    <header class="post__header">
+        <div class="close">
+            <img src="images/icons/close.svg" alt="">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-6 nopadding">
+                    <div class="newpost">
+                        Новый пост
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 nopadding">
+                    <ul class="control-center">
+                        <li @click="save">
+                            Сохранить
+                        </li>
+                        <li>
+                            Опубликовать
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-10 offset-lg-2">
+                <div class="post__body">
+                    <div class="author">
+                        <img src="images/author.png" alt="">
+                        <div class="author__info">
+                            <span class="author__name">Айбек Куатбаев</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-7 offset-lg-2">
+                <div class="post__body">
+                    <div class="post__title">
+                        <div v-if="title == ''" class="post__title-placeholder">Заголовок</div>
+                        <editable :content="title" @update="title = $event"></editable>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-3">
+                <div class="custom-select">
+                    <select name="category" v-model="category">
+                        <option value="0">Выберите категорию</option>
+                        <option value="1">2</option>
+                        <option value="2">3</option>
+                        <option value="3">4</option>
+                        <option value="4">5</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-7 offset-lg-2">
+                <div class="post__body">
+                    <div class="post__cover">
+                        <el-upload
+                                class="upload-demo"
+                                drag
+                                action="https://jsonplaceholder.typicode.com/posts/"
+                                :show-file-list="false"
+                                :on-success="handleAvatarSuccess"
+                                :before-upload="beforeAvatarUpload">
+                            <img v-if="imageUrl" :src="imageUrl" class="avatar">
+                            <div v-else>
+                                <i class="el-icon-upload"></i>
+                                <div class="el-upload__text">Загрузите картинку для заголовка</div>
+                            </div>
+                        </el-upload>
+                    </div>
+
+                    <div class="post__title post__desc">
+                        <div v-if="desc == ''" class="post__title-placeholder">Подзаголовок</div>
+                        <editable :content="desc" @update="desc = $event"></editable>
+                    </div>
+
+                    <div class="post__text">
+                        <div id="toolbar">
+                            <div class="ql-formats">
+                                <div>
+                                    <img @click="insertVideo" src="images/redactor/video.svg" alt="">
+                                </div>
+                                <el-upload
+                                        class="upload-demo"
+                                        :show-file-list="false"
+                                        :on-progress="handleProgress"
+                                        action="https://jsonplaceholder.typicode.com/posts/"
+                                        :on-error="handleError"
+                                        :on-success="handleSuccessUploaded">
+                                    <img src="images/redactor/image.svg" alt="">
+                                </el-upload>
+                                <div><img @click="insertLink" src="images/redactor/link.svg" alt=""></div>
+                                <div><img @click="insertCitation" src="images/redactor/citation.svg" alt=""></div>
+                            </div>
+                        </div>
+                        <div class="editor">
+
+                        </div>
+                    </div>
+
+                    <div class="post__tags">
+                        <input type="text"  class="input-from" name="tags[]" data-role="tagsinput" value="sdfsdf,sdfsd,1"/>
+                        <!--<input type="text"  class="input-to"/>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+<section class="bottom-menu">
+    <ul>
+        <li><a href="">Новости</a></li>
+        <li><a href="">Политика</a></li>
+        <li><a href="">Финансы</a></li>
+        <li><a href="">Технология</a></li>
+        <li><a href="">Спорт</a></li>
+        <li><a href="">Weekend</a></li>
+        <li><a href="">Реферат</a></li>
+        <li><a href="">Картинки</a></li>
+        <li><a href="">Билеты</a></li>
+        <li><a href="">Почта</a></li>
+        <li><a href="">Туры</a></li>
+        <li><a href="">Погода</a></li>
+    </ul>
+</section>
+
+<section class="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-4">
+                <div class="logo">
+                    <a href="/"><img src="images/logo.png" alt=""></a>
+                    <span>
+                            Разработка и дизайн <br>
+                            bg.pro, 2018
+                        </span>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="social-networks">
+                    <a href=""><img src="images/icons/social/instagram.svg" alt=""></a>
+                    <a href=""><img src="images/icons/social/facebook.svg" alt=""></a>
+                    <a href=""><img src="images/icons/social/telegram.svg" alt=""></a>
+                </div>
+            </div>
+            <div class="col-4">
+                <p class="copy">
+                    © 2012-2018 «bugin.kz» <br>
+                    Любое использование материалов допускается только при <br>
+                    наличии гиперссылки на bugin.kz
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script src="js/jquery.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/scripts.js"></script>
+
+<!-- Core build with no theme, formatting, non-essential modules -->
+<link href="libraries/quill/quill.core.css" rel="stylesheet">
+<script src="libraries/quill/quill.core.js"></script>
+
+<!-- Main Quill library -->
+<!--<script src="//cdn.quilljs.com/1.3.6/quill.js"></script>-->
+<script src="libraries/quill/quill.min.js"></script>
+
+<!-- Theme included stylesheets -->
+<link href="libraries/quill/quill.snow.css" rel="stylesheet">
+<link href="libraries/quill/quill.bubble.css" rel="stylesheet">
+
+
+<script src="js/vue.min.js"></script>
+<script src="js/bootstrap-tagsinput.js"></script>
+<!--<script src="js/search.js"></script>-->
+<script src="js/element.js"></script>
+<script src="js/element-locale.js"></script>
+<script>$(".input-from").val()</script>
+<script>
+    ELEMENT.locale(ELEMENT.lang.en);
+
+    Vue.component('editable', {
+        template: '<div class="editable" contenteditable="true" @input="update"></div>',
+        props: {
+            content: String,
+        },
+        mounted: function () {
+            this.$el.innerText = this.content;
+        },
+        methods: {
+            update: function (event) {
+                this.$emit('update', event.target.innerText);
+            }
+        }
+    });
+
+    var toolbarOptions = [['bold', 'italic'], ['link', 'image']];
+
+    new Vue({
+        el: "#post",
+        data: {
+            title: "СПК необходимо усилить контроль над возвратностью заемных средств",
+            category: "0",
+            imageUrl: null,
+            desc: "Президент США Дональд Трамп объявил о выходе США из ядерной сделки с Ираном. Он также пообещал возобновить действие санкций в отношении Ирана и пригрозил санкциями тем, кто будет поддерживать государство. Остальные члены договора продолжат выполнять условия договора.",
+            text: "Президент Ирана Хасан Роухани заявил, что Тегеран намерен сохранить соглашение, если его условия будут гарантированы пятью оставшимися членами Совместного всеобъемлющего плана действий (СВПД) – Россией, Великобританией, Китаем, Францией и Германией.",
+            tags: [111, 222, 444],
+            tag: "",
+            editor: null,
+            loading: false,
+        },
+        mounted: function () {
+            this.editor = new Quill('.editor', {
+                modules: {
+                    toolbar: [
+                        [{ header: [1, 2, false] }],
+                        ['bold', 'italic'],
+                        ['link', 'blockquote', 'video', 'code-block'],
+                    ]
+                },
+                placeholder: 'Текст ...',
+                theme: 'bubble'
+            });
+            this.editor.container.firstChild.innerHTML = this.text;
+        },
+        methods: {
+            insertVideo: function () {
+                $('.ql-video').click();
+            },
+
+            insertLink: function () {
+                $('.ql-link').click();
+            },
+
+            handleProgress: function(){
+                this.loading = true;
+            },
+
+            handleError: function (response, file, fileList) {
+                this.loading = false;
+                this.editor.insertEmbed(this.editor.getSelection(), 'image', 'https://www.nature.org/cs/groups/webcontent/@web/documents/media/nature-unites-us-new-homepage-.jpg');
+            },
+
+            handleSuccessUploaded: function(response){
+                this.loading = false;
+                this.editor.insertEmbed(this.editor.getSelection(), 'image', 'https://www.nature.org/cs/groups/webcontent/@web/documents/media/nature-unites-us-new-homepage-.jpg');
+            },
+
+            insertCitation: function () {
+                $('.ql-blockquote').click();
+            },
+
+            save: function () {
+                alert("more info in console");
+                this.text = this.editor.container.firstChild.innerHTML;
+                console.log("Title is: " + this.title);
+                console.log("Description is: " + this.desc);
+                console.log("text is: " + this.text);
+
+            },
+
+
+            handleAvatarSuccess(res, file) {
+                console.log(res);
+                this.imageUrl = URL.createObjectURL(file.raw);
+            },
+
+            beforeAvatarUpload(file) {
+                const isJPG = file.type === 'image/jpeg';
+                const isLt2M = file.size / 1024 / 1024 < 2;
+
+                if (!isLt2M) {
+                    this.$message.error('Avatar picture size can not exceed 2MB!');
+                }
+                return isLt2M;
+            },
+
+            addTag: function () {
+                this.tags.push(this.tag);
+                this.tag = "";
+            }
+        }
+    });
+</script>
+<!--<script type="text/javascript">-->
+    <!--var input_from = document.querySelector('.input-from');-->
+    <!--var input_to = document.querySelector('.input-to');-->
+    <!--var arr = [];-->
+    <!--input_from.value = input_to.value;-->
+    <!--console.log(input_to.value);-->
+
+<!--//    input_from.onkeypress = function () {-->
+<!--//        if(event.key == "Enter"){-->
+<!--//            input_from.value = input_to.value;-->
+<!--//            console.log(input_to.value);-->
+<!--//        }else{-->
+<!--//            console.log(false);-->
+<!--//        }-->
+<!--//-->
+<!--//    }-->
+<!--//    function removeLi(){-->
+<!--//        var p = event.srcElement.parentNode;-->
+<!--//        console.log(p);-->
+<!--//        p.parentNode.removeChild(p);-->
+<!--////        input_to.value = '';-->
+<!--//    }-->
+<!--</script>-->
+
+</body>
+</html>
